@@ -1,0 +1,13 @@
+{
+    "Login": "Войти",
+    "Logout": "Выйти",
+    "Register": "Регистрация",
+    "E-Mail Address": "Адрес электронной почты",
+    "Password": "Пароль",
+    "Remember Me": "Запомнить меня",
+    "Forgot Your Password?": "Забыли Ваш пароль?",
+    "Name": "Имя",
+    "You have successfully logged in!": "Вы успешно вошли в систему!",
+    "Dashboard": "Кабинет",
+    "Learning system": "Обучающая система"
+}
