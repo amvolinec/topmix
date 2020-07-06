@@ -1,10 +1,10 @@
 <div class="form-group row">
-    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <label for="%1$s" class="col-md-4 col-form-label text-md-right">{{ __('%2$s') }}</label>
 
     <div class="col-md-6">
-        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+        <input id="%1$s" type="email" class="form-control @error('%1$s') is-invalid @enderror" name="%1$s" value="{{ old('%1$s') }}" autocomplete="%1$s" %3$s>
 
-        @error('email')
+        @error('%1$s')
         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
