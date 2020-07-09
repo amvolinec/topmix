@@ -20,4 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::resource('fields','FieldController');
+Route::resource('course', 'CourseController');
+Route::resource('lesson', 'CourseController');
