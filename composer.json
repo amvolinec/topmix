@@ -36,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Avart\\Forms\\": "packages/avart/forms/src"
         },
         "classmap": [
             "database/seeds",

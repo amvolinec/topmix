@@ -17,7 +17,9 @@ class CreateFieldsTable extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();
+            $table->string('route')->nullable();
+            $table->string('model')->nullable();
             $table->timestamps();
         });
 
@@ -30,13 +32,15 @@ class CreateFieldsTable extends Migration
 
         Schema::create('fields', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('table_id');
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('table_id')->nullable();
+            $table->unsignedBigInteger('type_id')->default(1);
+            $table->string('name');
             $table->string('title');
-            $table->string('description');
-            $table->string('route');
-            $table->string('model');
-            $table->json('settings');
+            $table->boolean('nullable')->default(1);
+            $table->string('default')->nullable();
+            $table->boolean('fillable')->default(1);
+            $table->boolean('inlist')->default(1);
+            $table->json('settings')->nullable();
             $table->timestamps();
 
             $table->foreign('table_id')

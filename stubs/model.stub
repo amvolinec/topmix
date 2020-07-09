@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace {{ namespace }};
 
 use Illuminate\Database\Eloquent\Model;
 
-class Field extends Model
+class {{ class }} extends Model
 {
     //
 }

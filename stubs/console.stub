@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Console\Commands;
+namespace {{ namespace }};
 
 use Illuminate\Console\Command;
 
-class CreateForm extends Command
+class {{ class }} extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'form:create {model}';
+    protected $signature = '{{ command }}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create form';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -33,7 +33,7 @@ class CreateForm extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return int
      */
     public function handle()
     {

@@ -1,0 +1,13 @@
+{
+    "name": "avart/forms",
+    "description": "This Laravel BREAD | CRUD creating utility",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "medumi",
+            "email": "medumi@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
