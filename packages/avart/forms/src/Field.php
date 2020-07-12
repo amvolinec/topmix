@@ -12,4 +12,8 @@ class Field extends Model
     {
         return $this->belongsTo('Avart\Forms\Table');
     }
+
+    public function type(){
+        return $this->belongsTo('Avart\Forms\Type');
+    }
 }

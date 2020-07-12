@@ -13,13 +13,25 @@ class TypeSeeder extends Seeder
     public function run()
     {
         $roles = [
-            ['name' => 'text', 'class' => 'Text'],
-            ['name' => 'number', 'class' => 'Number'],
-            ['name' => 'checkbox', 'class' => 'Checkbox'],
-            ['name' => 'select', 'class' => 'Select'],
-            ['name' => 'multi', 'class' => 'Multi'],
-            ['name' => 'date', 'class' => 'Date'],
-            ['name' => 'datetime', 'class' => 'Datetime'],
+            ['name' => 'string', 'class' => 'text'],
+            ['name' => 'integer', 'class' => 'number'],
+            ['name' => 'boolean', 'class' => 'checkbox'],
+            ['name' => 'dateTime', 'class' => 'datetime'],
+            ['name' => 'text', 'class' => 'textarea'],
+            ['name' => 'unsignedSmallInteger', 'class' => 'number'],
+            ['name' => 'unsignedBigInteger', 'class' => 'number'],
+            ['name' => 'unsignedBigInteger', 'class' => 'select'],
+            ['name' => 'bigInteger', 'class' => 'number'],
+            ['name' => 'char', 'class' => 'text'],
+            ['name' => 'date', 'class' => 'date'],
+            ['name' => 'decimal', 'class' => 'number'],
+            ['name' => 'float', 'class' => 'number'],
+            ['name' => 'json', 'class' => 'textarea'],
+            ['name' => 'jsonb', 'class' => 'textarea'],
+            ['name' => 'longText', 'class' => 'textarea'],
+            ['name' => 'smallInteger', 'class' => 'number'],
+            ['name' => 'softDeletes', 'class' => 'datetime'],
+            ['name' => 'time', 'class' => 'string']
         ];
         DB::table('types')->insert($roles);
     }

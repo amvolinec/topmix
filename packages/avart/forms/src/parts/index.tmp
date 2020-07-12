@@ -1,0 +1,50 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">{{ __('%2$s') }}</div>
+
+                    <div class="card-body">
+
+                        <form action="{{ route('%1$s.create') }}">
+                            <button class="btn btn-success mb-3">+</button>
+                        </form>
+
+                        <table class="table table-sm">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                %3$s
+                                <th scope="col">{{ __('Actions') }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($%5$s AS $%1$s)
+                                <tr>
+                                    <th scope="row">{{ $%1$s->id  }}</th>
+                                    %4$s
+                                    <td>
+                                        <a class="btn btn-sm btn-success float-right" style="margin: 0 8px;"
+                                           href="{{ route('%1$s.edit', $%1$s->id) }}">{{ __('Edit') }}</a>
+                                        <form class="float-right" action="{{ route('%1$s.destroy', $%1$s->id) }}"
+                                              method="post" onsubmit="return confirm('Do you really want to delete?');">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-sm btn-danger" type="submit">{{ __('Delete') }}</button>
+                                        </form>
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

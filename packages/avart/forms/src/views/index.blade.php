@@ -8,21 +8,26 @@
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
+                        {{ __('Tables') }}
+
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
 
+                        <div class="m-3">
                             <a class="btn btn-sm btn-success" href="{{ route('forms.create') }}">{{ __('Create') }}</a>
+                        </div>
 
-                        @forelse($fields AS $row)
-                            $row->name
+                        @forelse($tables AS $row)
+                            <div class="m-3">
+                                <a href="{{ route('forms.edit', $row->route) }}">{{ $row->name }}</a>
+                            </div>
                         @empty
-                            <p>No fields</p>
+                            <p>No tables</p>
                         @endforelse
 
-                        {{ __('You have successfully logged in!') }}
                     </div>
                 </div>
             </div>

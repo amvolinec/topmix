@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
+use App\%1$s;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class %1$sController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
-        return view('course.index', ['courses' => $courses]);
+        $%2$s = %1$s::all();
+        return view('%3$s.index', ['%2$s' => $%2$s]);
     }
 
     /**
@@ -25,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('course.create');
+        return view('%3$s.create');
     }
 
     /**
@@ -36,54 +36,54 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        Course::create($request->except('_method', '_token'));
-        return redirect()->route('course.index');
+        %1$s::create($request->except('_method', '_token'));
+        return redirect()->route('%3$s.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Course  $course
+     * @param  \App\%1$s  $%3$s
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function show(Course $course)
+    public function show(%1$s $%3$s)
     {
-        return redirect()->route('course.index');
+        return redirect()->route('%3$s.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Course  $course
+     * @param  \App\%1$s  $%3$s
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(%1$s $%3$s)
     {
-        return view ('course.edit' , ['course' => $course]);
+        return view ('%3$s.create' , ['%3$s' => $%3$s]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Course  $course
+     * @param  \App\%1$s  $%3$s
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, %1$s $%3$s)
     {
-        $course->fill($request->except('_method', '_token'))->save();
-        return redirect()->route('course.index');
+        $%3$s->fill($request->except('_method', '_token'))->save();
+        return redirect()->route('%3$s.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Course  $course
+     * @param  \App\%1$s  $%3$s
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(%1$s $%3$s)
     {
-        $course->delete();
-        return redirect()->route('course.index');
+        $%3$s->delete();
+        return redirect()->route('%3$s.index');
     }
 }

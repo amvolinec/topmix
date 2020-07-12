@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
     $('#add-field').click(function () {
         let line = $('#form-line').html();
@@ -10,4 +10,11 @@ $( document ).ready(function() {
         $('form').submit();
     });
 
+    $('input:checkbox').change(function () {
+        if ($(this).is(':checked')) {
+            $(this).val('1');
+        } else {
+            $(this).val('0');
+        }
+    });
 });
