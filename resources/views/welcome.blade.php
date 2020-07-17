@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>TOPMIX Образовательная программа</title>
+        <script src="{{ asset('js/main.js') }}" defer></script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -80,9 +82,10 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    {{ __('messages.app_name') }}
+                <div class="title m-b-md tran-all">
+                    TOPMIX
                 </div>
+                <h2>{{ __('messages.learning_platform') }}</h2>
             </div>
         </div>
     </body>

@@ -63,7 +63,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('course.edit', ['course' => $course, 'users' => User::all()]);
+        return view('course.create', ['course' => $course, 'users' => User::all()]);
     }
 
     /**
