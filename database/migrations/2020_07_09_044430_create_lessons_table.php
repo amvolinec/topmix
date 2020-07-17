@@ -15,9 +15,12 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
+            $table->string('title')->index();
             $table->string('description')->default('');
-            $table->unsignedBigInteger('author_id')->nullable();
+            $table->text('text')->nullable();
+            $table->string('file')->nullable();
+            $table->string('notes')->nullable();
+            $table->unsignedBigInteger('course_id')->nullable();
             $table->boolean('published')->default(0);
             $table->timestamps();
         });

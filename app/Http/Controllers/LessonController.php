@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use App\Lesson;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class LessonController extends Controller
      */
     public function create()
     {
-        return view('lesson.create');
+        $courses = Course::all();
+        return view('lesson.create', compact('courses'));
     }
 
     /**
@@ -73,9 +75,12 @@ class LessonController extends Controller
     public function update(Request $request, Lesson $lesson)
     {
         $lesson->fill($request->all())->save();
+        $path = $request->file('file')->store('files');
 
         return redirect()->route('lesson.index');
+
     }
+
 
     /**
      * Remove the specified resource from storage.

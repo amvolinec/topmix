@@ -15,17 +15,23 @@
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Title</th>
                             <th scope="col">Description</th>
-                            <th scope="col">action</th>
+                            <th scope="col">Notes</th>
+                            <th scope="col">Select course</th>
+                            <th scope="col">Select file</th>
+                            <th scope="col">Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($lessons AS $lesson)
                             <tr>
                                 <th scope="row">{{ $lesson->id  }}</th>
-                                <td>{{ $lesson->name }}</td>
+                                <td>{{ $lesson->title }}</td>
                                 <td>{{ $lesson->description }}</td>
+                                <td>{{ $lesson->notes }}</td>
+                                <td>{{ $lesson->course_id}}</td>
+                                <td>{{ $lesson->file }}</td>
                                 <td>
                                     <a class="btn btn-sm btn-success float-right" style="margin: 0 8px;"
                                        href="{{ route('lesson.edit', $lesson->id) }}">Edit</a>
