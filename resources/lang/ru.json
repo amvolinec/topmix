@@ -10,5 +10,13 @@
     "You have successfully logged in!": "Вы успешно вошли в систему!",
     "Dashboard": "Кабинет",
     "Learning system": "Обучающая система",
-    "Confirm Password": "Подтвердите пароль"
+    "Confirm Password": "Подтвердите пароль",
+    "Actions": "Операции",
+    "Version": "Версия",
+    "Description": "Описание",
+    "Settings": "Настройки",
+    "User": "Пользователь",
+    "Edit": "Редактировать",
+    "Delete": "Удалить",
+    "Update": "Обновить"
 }

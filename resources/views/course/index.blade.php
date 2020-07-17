@@ -18,13 +18,13 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
-                            <th scope="col">action</th>
+                            <th scope="col">{{ __('Actions') }}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($courses AS $course)
                             <tr>
-                                <th scope="row">{{ $course->id  }}</th>
+                                <th scope="row">{{ $course->id }}</th>
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->description }}</td>
                                 <td>

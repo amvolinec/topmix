@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Field;
+use Avart\Forms\Field;
+use Avart\Forms\Type;
 use Illuminate\Http\Request;
 
 class FieldController extends Controller
@@ -14,8 +15,7 @@ class FieldController extends Controller
      */
     public function index()
     {
-        $fields = \App\Field::all();
-        return view('fields.index', compact('fields'));
+        return view('forms::index', ['fields' => Field::all(), 'types' => Type::all()]);
     }
 
     /**
@@ -42,7 +42,7 @@ class FieldController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Field  $field
+     * @param  Field  $field
      * @return \Illuminate\Http\Response
      */
     public function show(Field $field)
@@ -53,7 +53,7 @@ class FieldController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Field  $field
+     * @param  Field  $field
      * @return \Illuminate\Http\Response
      */
     public function edit(Field $field)
@@ -65,7 +65,7 @@ class FieldController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Field  $field
+     * @param  Field  $field
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Field $field)
@@ -76,7 +76,7 @@ class FieldController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Field  $field
+     * @param  Field  $field
      * @return \Illuminate\Http\Response
      */
     public function destroy(Field $field)
