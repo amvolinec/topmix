@@ -23,6 +23,10 @@ class CreateLessonsTable extends Migration
             $table->unsignedBigInteger('course_id')->nullable();
             $table->boolean('published')->default(0);
             $table->timestamps();
+
+            $table->foreign('course_id')->references('id')
+                ->on('courses')
+                ->onDelete('set null');
         });
     }
 

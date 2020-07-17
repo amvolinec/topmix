@@ -21,7 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => ['web']], function () {
+    Route::resource('fields', 'FieldController');
+    Route::resource('course', 'CourseController');
+    Route::resource('lesson', 'LessonController');
 
-Route::resource('fields','FieldController');
-Route::resource('course', 'CourseController');
-Route::resource('lesson', 'LessonController');
+    Route::get('users-lessons', 'UserLessonController@index')->name('users.lessons');
+    Route::get('users-lessons/{id}', 'UserLessonController@edit')->name('users.lessons.edit');
+});
