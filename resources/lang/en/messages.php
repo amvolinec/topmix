@@ -17,6 +17,6 @@ return [
     'login' => 'Login',
     'logout' => 'Logout',
     'register' => 'Register',
-    'app_name' => 'Learning platform',
+    'app_name' => 'TOMPIX Learning platform',
 
 ];
