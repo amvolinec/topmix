@@ -16,8 +16,9 @@
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">{{ __ ('Name')}}</th>
+                            <th scope="col">{{__ ('Description')}}</th>
+                            <th scope="col">{{__ ('Author')}}</th>
                             <th scope="col">{{ __('Actions') }}</th>
                         </tr>
                         </thead>
@@ -27,14 +28,15 @@
                                 <th scope="row">{{ $course->id }}</th>
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->description }}</td>
+                                <td>{{ $course->author->name ?? __('undefined')}}</td>
                                 <td>
                                     <a class="btn btn-sm btn-success float-right" style="margin: 0 8px;"
-                                       href="{{ route('course.edit', $course->id) }}">Edit</a>
+                                       href="{{ route('course.edit', $course->id) }}">{{__ ('Edit')}}</a>
                                     <form class="float-right" action="{{ route('course.destroy', $course->id) }}"
                                           method="post" onsubmit="return confirm('Do you really want to delete?');">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                                        <button class="btn btn-sm btn-danger" type="submit">{{__ ('Delete')}}</button>
                                     </form>
 
                                 </td>
