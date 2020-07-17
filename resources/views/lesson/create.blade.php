@@ -4,26 +4,39 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Create Lesson</div>
+                    <div class="card-header">{{__ ('Create Lesson')}}</div>
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <form action="{{ route('lesson.store') }}" method="post">
-                            @method('post')
-                            @csrf
+
+                            @if(isset($lesson))
+                                <form action="{{ route('lesson.update', $lesson->id) }}" method="post">
+                                    @method('put')
+
+                                    @else
+                                        <form action="{{ route('lesson.store') }}" method="post">
+                                            @method('post')
+                                            @endif
+
+                                            @csrf
+                                            <div class="form-group">
+                                                <label>{{ __('Lesson name') }}</label>
+                                                <input class="form-control" type="text" name="name" value="{{ $lesson->name ?? old('name') }}">
+                                            </div>
+
                             <div class="form-group">
-                                <lable>Title</lable>
+                                <lable>{{__ ('Title')}}</lable>
                                 <input class="form-control" type="text" name="title">
                             </div>
                             <div class="form-group">
-                                <lable>Description</lable>
+                                <lable>{{__ ('Description')}}</lable>
                                 <input class="form-control" type="text" name="description">
                             </div>
                             <div class="form-group">
-                                <lable>Notes</lable>
+                                <lable>{{__ ('Notes')}}</lable>
                                 <input class="form-control" type="text" name="notes">
                             </div>
 
@@ -35,6 +48,11 @@
                                     @endforeach
                                 </select>
                             </div>
+                                            @if(isset($lesson))
+                                                <button class="btn btn-success" type="submit">{{ __('Update') }}</button>
+                                            @else
+                                                <button class="btn btn-success" type="submit">{{ __('Save') }}</button>
+                                            @endif
 
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Select file</label>

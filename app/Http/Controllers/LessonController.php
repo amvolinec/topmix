@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\Lesson;
+use App\User;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
@@ -62,7 +63,7 @@ class LessonController extends Controller
      */
     public function edit(Lesson $lesson)
     {
-        return view ('lesson.edit' , ['lesson' => $lesson]);
+        return view('lesson.create', ['courses' => Course::all(), 'lesson' => $lesson, 'users' => User::all()]);
     }
 
     /**
@@ -74,9 +75,11 @@ class LessonController extends Controller
      */
     public function update(Request $request, Lesson $lesson)
     {
-        $lesson->fill($request->all())->save();
-        $path = $request->file('file')->store('files');
+        if($request->hasFile('file')){
+            $path = $request->file('file')->store('files');
+        }
 
+        $lesson->fill($request->all())->save();
         return redirect()->route('lesson.index');
 
     }
