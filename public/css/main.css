@@ -1,0 +1,49 @@
+.navbar-expand-md {
+    min-height: 80px;
+}
+
+.dashboard {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: calc(100% - 80px);
+    width: 200px;
+    padding: 16px;
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
+    box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
+}
+
+.dashboard .menu {
+    text-align: center;
+}
+
+.dashboard .menu-item {
+    height: 48px;
+    border-radius: 2px;
+    padding: 8px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.dashboard .menu-item:hover {
+    border: 1px #e9e9e9 solid;
+    -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.11);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.11);
+}
+
+
+.dashboard .menu a {
+    text-underline: none;
+    text-decoration: none;
+    color: #3d3f45;
+}
+
+.wrapper {
+    position: relative;
+    margin-left: 200px;
+}
+

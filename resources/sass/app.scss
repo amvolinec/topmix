@@ -8,8 +8,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 .tran-all {
-    -webkit-transition: all 500ms ease-out 1s;
-    -moz-transition: all 500ms ease-out 1s;
-    -o-transition: all 500ms ease-out 1s;
-    transition: all 500ms ease-out 1s;
+    -webkit-transition: all ease-out 1s;
+    -moz-transition: all ease-out 1s;
+    -o-transition: all ease-out 1s;
+    transition: all ease-out 1s;
 }
+

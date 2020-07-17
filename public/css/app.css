@@ -10928,3 +10928,7 @@ a.text-dark:focus {
   }
 }
 
+.tran-all {
+  transition: all ease-out 1s;
+}
+

@@ -19,5 +19,4 @@ return [
     'register' => 'Register',
     'app_name' => 'TOMPIX Learning platform',
     'learning_platform' => 'Learning platform',
-
 ];
