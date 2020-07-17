@@ -20,10 +20,17 @@
     "Delete": "Удалить",
     "Save": "Сохранить",
     "Create Course": "Создать курс",
+    "Create Lesson": "Создать урок",
     "Course name": "Название курса",
     "Course": "Курс",
     "Courses": "Курсы",
-    "Select form list": "Выберите из списка",
+    "Title": "Название",
+    "Notes" : "Примечание",
     "Author": "Автор",
+    "Lesson": "Урок",
+    "Select lesson": "Выбрать урок" ,
+    "Select file" : "Выбрать файл",
+    "Select form list": "Выберите из списка",
+    "Action": "Действие",
     "Update": "Обновить"
 }
