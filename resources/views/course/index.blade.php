@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>
-                    Course
+                    {{ __('Course') }}
                 </h1>
                 <form action="{{ route('course.create') }}">
                     <button class="btn btn-success">+</button>

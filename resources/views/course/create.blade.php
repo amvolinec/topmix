@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Create Course</div>
+                    <div class="card-header">{{ __('Create Course') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -19,16 +19,25 @@
                             @csrf
 
                             <div class="form-group">
-                                <lable>Name</lable>
+                                <label>{{ __('Course name') }}</label>
                                 <input class="form-control"  type="text" name="name">
                             </div>
 
                             <div class="form-group">
-                                <lable>Description</lable>
+                                <label>{{ __('Description') }}</label>
                                 <input class="form-control" type="text" name="description">
                             </div>
 
-                            <button class="btn btn-success" type="submit">Save</button>
+                            <div class="form-group">
+                                <select class="form-control" name="author_id" id="author_id">
+                                    <option value="" disabled selected>{{ __('Select form list') }}</option>
+                                    @foreach($users as $user)
+                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <button class="btn btn-success" type="submit">{{ __('Save') }}</button>
 
                         </form>
                     </div>

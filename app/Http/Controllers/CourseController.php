@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -10,11 +12,12 @@ class CourseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\View\View
      */
     public function index()
     {
         $courses = Course::all();
+
         return view('course.index', ['courses' => $courses]);
     }
 
@@ -25,13 +28,14 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('course.create');
+        $users = User::with('role')->get();
+        return view('course.create', ['users' => $users]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
@@ -43,7 +47,7 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Course  $course
+     * @param \App\Course $course
      * @return \Illuminate\Http\RedirectResponse
      */
     public function show(Course $course)
@@ -54,19 +58,19 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Course  $course
+     * @param \App\Course $course
      * @return \Illuminate\Http\Response
      */
     public function edit(Course $course)
     {
-        return view ('course.edit' , ['course' => $course]);
+        return view('course.edit', ['course' => $course, 'users' => User::all()]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Course  $course
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Course $course
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Course $course)
@@ -78,7 +82,7 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Course  $course
+     * @param \App\Course $course
      * @return \Illuminate\Http\Response
      */
     public function destroy(Course $course)

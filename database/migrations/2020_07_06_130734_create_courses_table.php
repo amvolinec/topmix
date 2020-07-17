@@ -20,6 +20,10 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('author_id')->nullable();
             $table->boolean('published')->default(0);
             $table->timestamps();
+
+            $table->foreign('author_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
         });
     }
 
