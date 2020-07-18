@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class RoleServiceProvider extends ServiceProvider
@@ -25,8 +26,12 @@ class RoleServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('layouts.dashboard', function ($view) {
-            $role = User::with('role')->where('id', auth()->user()->id)->first();
-            $view->with('role', $role->id);
+            $role_id = 0;
+            if (Auth::check()) {
+                $role = User::with('role')->where('id', auth()->user()->id)->first();
+                $role_id = $role->id;
+            }
+            $view->with('role', $role_id);
         });
     }
 }

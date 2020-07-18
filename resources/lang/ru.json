@@ -32,5 +32,14 @@
     "Select file" : "Выбрать файл",
     "Select form list": "Выберите из списка",
     "Action": "Действие",
-    "Update": "Обновить"
+    "Lessons": "Уроки",
+    "Update": "Обновить",
+    "Add access": "Открыть доступ",
+    "Active": "Открыть доступ",
+    "Save changes": "Сохранить изменения",
+    "Lesson name": "Название урока",
+    "Select course": "Выбрать курс",
+    "Published": "Опубликовано",
+    "Edit lesson": "Опубликовано",
+    "Activate": "Отурыть доступ"
 }

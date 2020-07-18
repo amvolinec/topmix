@@ -1,12 +1,12 @@
 .navbar-expand-md {
-    min-height: 80px;
+    min-height: 76px;
 }
 
 .dashboard {
-    position: fixed;
+    position: absolute;
     top: 80px;
     left: 0;
-    height: calc(100% - 80px);
+    height: calc(100%);
     width: 200px;
     padding: 16px;
     background: #fff;
@@ -47,3 +47,10 @@
     margin-left: 200px;
 }
 
+.course {
+    color: #dcb753;
+}
+
+.lesson {
+    color: #63a147;
+}
