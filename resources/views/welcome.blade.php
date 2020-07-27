@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>TOPMIX Образовательная программа</title>
+        <title>TOPLESSON Образовательная программа</title>
         <script src="{{ asset('js/main.js') }}" defer></script>
 
         <!-- Fonts -->
@@ -83,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md tran-all">
-                    TOPMIX
+                    TOPLESSON
                 </div>
                 <h2>{{ __('messages.learning_platform') }}</h2>
             </div>

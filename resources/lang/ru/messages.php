@@ -17,7 +17,7 @@ return [
     'login' => 'Войти',
     'logout' => 'Выйти',
     'register' => 'Регистрироваться',
-    'app_name' => 'TOPMIX Образовательная программа',
+    'app_name' => 'TOPLESSON Образовательная программа',
     'learning_platform' => 'Образовательная программа',
 
 ];
