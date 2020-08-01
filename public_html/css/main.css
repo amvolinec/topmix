@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Neucha&display=swap');
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Neucha', cursive;
+}
+
+.navbar {
+    background: #222222 !important;
+    color: #fafafa !important;
+}
+
+.navbar a {
+    color: #fafafa !important;
+}
+
+.navbar-nav .dropdown-menu {
+    background: #222222 !important;
+
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background: #303030 !important;
+}
+
 .navbar-expand-md {
     min-height: 76px;
 }
@@ -53,4 +77,13 @@
 
 .lesson {
     color: #63a147;
+}
+
+@media only screen and (max-width: 600px) {
+    .dashboard {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
 }
