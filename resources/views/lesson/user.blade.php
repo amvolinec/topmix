@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <h1>
@@ -8,7 +8,7 @@
                 </h1>
                 <br>
                 <div class="title m-b-md">
-                    <table class="table table-sm">
+                    <table class="table">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>

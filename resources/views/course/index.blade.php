@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <h1>
@@ -12,7 +12,7 @@
                 </form>
                 <br>
                 <div class="title m-b-md">
-                    <table class="table table-sm">
+                    <table class="table">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
@@ -30,13 +30,13 @@
                                 <td>{{ $course->description }}</td>
                                 <td>{{ $course->author->name ?? __('undefined')}}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-success float-right" style="margin: 0 8px;"
+                                    <a class="btn btn-success float-right" style="margin: 0 8px;"
                                        href="{{ route('course.edit', $course->id) }}">{{__ ('Edit')}}</a>
                                     <form class="float-right" action="{{ route('course.destroy', $course->id) }}"
                                           method="post" onsubmit="return confirm('Do you really want to delete?');">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-sm btn-danger" type="submit">{{__ ('Delete')}}</button>
+                                        <button class="btn btn-danger" type="submit">{{__ ('Delete')}}</button>
                                     </form>
 
                                 </td>

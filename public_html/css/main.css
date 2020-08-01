@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
 
 h1, h2, h3, h4, h5 {
     font-family: 'Neucha', cursive;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
 }
 
 .navbar {
@@ -27,16 +33,22 @@ h1, h2, h3, h4, h5 {
 }
 
 .dashboard {
+    font-style: italic;
     position: absolute;
     top: 80px;
     left: 0;
     height: calc(100%);
-    width: 200px;
+    width: 300px;
     padding: 16px;
     background: #fff;
     -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
     -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
     box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
+}
+
+.wrapper {
+    position: relative;
+    margin-left: 300px;
 }
 
 .dashboard .menu {
@@ -66,11 +78,6 @@ h1, h2, h3, h4, h5 {
     color: #3d3f45;
 }
 
-.wrapper {
-    position: relative;
-    margin-left: 200px;
-}
-
 .course {
     color: #dcb753;
 }
@@ -79,11 +86,26 @@ h1, h2, h3, h4, h5 {
     color: #63a147;
 }
 
+.btn-danger {
+    background: #737373;
+    border-color: #737373;
+}
+
+.btn-success {
+    background: #949494;
+    border-color: #949494;
+}
+
 @media only screen and (max-width: 600px) {
     .dashboard {
         display: block;
         position: relative;
         width: 100%;
         height: auto;
+    }
+
+    .wrapper {
+        position: relative;
+        margin-left: 0;
     }
 }
