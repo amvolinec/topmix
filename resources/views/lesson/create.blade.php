@@ -48,7 +48,7 @@
                             </div>
 
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="published">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="published"@if(isset($lesson) && $lesson->published == 1) checked @endif>
                                 <label class="form-check-label" for="exampleCheck1">{{ __('Published') }}</label>
                             </div>
 

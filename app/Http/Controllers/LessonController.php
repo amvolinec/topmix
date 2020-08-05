@@ -39,7 +39,9 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        Lesson::create($request->except('_method', '_token'));
+        $lesson = Lesson::create($request->except('_method', '_token', 'published'));
+        $lesson->published = $request->has('published') ? 1 : 0;
+        $lesson->save();
 
         return redirect()->route('lesson.index');
     }
@@ -79,7 +81,10 @@ class LessonController extends Controller
             $path = $request->file('file')->store('files');
         }
 
-        $lesson->fill($request->all())->save();
+        $lesson->fill($request->except('_method', '_token', 'published'))->save();
+
+        $lesson->published = $request->has('published') ? 1 : 0;
+        $lesson->save();
         return redirect()->route('lesson.index');
 
     }

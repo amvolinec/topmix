@@ -18,8 +18,9 @@
                             <th scope="col">{{__ ('Title')}}</th>
                             <th scope="col">{{__ ('Description')}}</th>
                             <th scope="col">{{__ ('Notes')}}</th>
-                            <th scope="col">{{__ ('Select lesson')}}</th>
-                            <th scope="col">{{__('Select file')}}</th>
+                            <th scope="col">{{__ ('Lesson')}}</th>
+                            <th scope="col">{{__('File')}}</th>
+                            <th scope="col">{{__('Published')}}</th>
                             <th scope="col">{{__ ('Action')}}</th>
                         </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                 <td>{{ $lesson->notes }}</td>
                                 <td>{{ $lesson->course_id}}</td>
                                 <td>{{ $lesson->file }}</td>
+                                <td>{{ $lesson->published ? __('Yes') : __('No') }}</td>
                                 <td>
                                     <a class="btn btn-success float-right" style="margin: 0 8px;"
                                        href="{{ route('lesson.edit', $lesson->id) }}">{{__ ('Edit')}}</a>
