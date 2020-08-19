@@ -35,10 +35,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('fields', 'FieldController');
     Route::resource('course', 'CourseController');
     Route::resource('lesson', 'LessonController');
+
+    Route::resource('payment', 'PaymentController');
+    Route::post('payment/find/', 'PaymentController@find')->name('payment.find');
+    Route::get('payment/find/{string}', 'PaymentController@find')->name('payment.find.get');
 
     Route::get('users-lessons', 'UserLessonController@index')->name('users.lessons');
     Route::get('users-lessons/{id}', 'UserLessonController@edit')->name('users.lessons.edit');
