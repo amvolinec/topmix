@@ -1,0 +1,35 @@
+.sidebar {
+    position: fixed;
+    padding: 16px;
+    width: 140px;
+    height: 100%;
+    font-size: 0.85rem;
+    background-color: #538d8f;
+    color: #fafafa !important;
+}
+
+.with-sidebar {
+    margin-left: 140px;
+    width: calc(100% - 140px);
+}
+
+.side-menu a {
+    color: #ffffff !important;
+}
+
+.side-menu a:hover {
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+.side-menu li {
+    line-height: 2rem;
+}
+
+.table {
+    color: #535353;
+}
+
+.btn {
+    border: none;
+}

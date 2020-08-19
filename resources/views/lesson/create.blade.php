@@ -20,21 +20,21 @@
                             @csrf
 
                             <div class="form-group">
-                                <lable>{{__ ('Title')}}</lable>
+                                <label>{{__ ('Title')}}</label>
                                 <input class="form-control" type="text" name="title" value="{{ $lesson->title ?? old('name') }}">
                             </div>
                             <div class="form-group">
-                                <lable>{{__ ('Description')}}</lable>
+                                <label>{{__ ('Description')}}</label>
                                 <input class="form-control" type="text" name="description" value="{{ $lesson->description ?? old('description') }}">
                             </div>
                             <div class="form-group">
-                                <lable>{{__ ('Notes')}}</lable>
+                                <label>{{__ ('Notes')}}</label>
                                 <input class="form-control" type="text" name="notes" value="{{ $lesson->notes ?? old('notes') }}">
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">{{ __('Select course') }}</label>
-                                <select class="form-control" name="course_id" id="courseId">
+                                <label for="course_id">{{ __('Select course') }}</label>
+                                <select class="form-control" name="course_id" id="course_id">
                                     <option value="" disabled selected>{{ __('Select form list') }}</option>
                                     @foreach($courses as $course)
                                         <option value="{{ $course->id }}" @if(isset($lesson) && $lesson->course_id == $course->id) selected @endif>{{ $course->name }}</option>
@@ -42,7 +42,7 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group m-5">
                                 <label for="exampleFormControlFile1">{{ __('Select file') }}</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
                             </div>
@@ -54,9 +54,9 @@
 
                             <div class="mt-3">
                                 @if(isset($lesson))
-                                    <button class="btn btn-success" type="submit">{{ __('Update') }}</button>
+                                    <button class="btn btn-outline-success" type="submit"><i class="far fa-save"></i> {{ __('Update') }}</button>
                                 @else
-                                    <button class="btn btn-success" type="submit">{{ __('Save') }}</button>
+                                    <button class="btn btn-outline-success" type="submit"><i class="far fa-save"></i> {{ __('Save') }}</button>
                                 @endif
                             </div>
 
@@ -66,4 +66,13 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer-scripts')
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#course_id').select2();
+        });
+    </script>
 @endsection

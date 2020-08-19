@@ -12,7 +12,7 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $roles = [
+        $types = [
             ['name' => 'string', 'class' => 'text'],
             ['name' => 'integer', 'class' => 'number'],
             ['name' => 'boolean', 'class' => 'checkbox'],
@@ -25,6 +25,7 @@ class TypeSeeder extends Seeder
             ['name' => 'char', 'class' => 'text'],
             ['name' => 'date', 'class' => 'date'],
             ['name' => 'decimal', 'class' => 'number'],
+            ['name' => 'decimal', 'class' => 'decimal'],
             ['name' => 'float', 'class' => 'number'],
             ['name' => 'json', 'class' => 'textarea'],
             ['name' => 'jsonb', 'class' => 'textarea'],
@@ -33,6 +34,6 @@ class TypeSeeder extends Seeder
             ['name' => 'softDeletes', 'class' => 'datetime'],
             ['name' => 'time', 'class' => 'string']
         ];
-        DB::table('types')->insert($roles);
+        DB::table('types')->insert($types);
     }
 }

@@ -3,6 +3,7 @@
     "Logout": "Выйти",
     "Register": "Регистрация",
     "E-Mail Address": "Адрес электронной почты",
+    "Email": "Адрес электронной почты",
     "Password": "Пароль",
     "Remember Me": "Запомнить меня",
     "Forgot Your Password?": "Забыли Ваш пароль?",
@@ -35,6 +36,7 @@
     "Lessons": "Уроки",
     "Update": "Обновить",
     "Add access": "Открыть доступ",
+    "Opened lessons": "Открытые уроки",
     "Active": "Открыть доступ",
     "Save changes": "Сохранить изменения",
     "Lesson name": "Название урока",
@@ -42,6 +44,7 @@
     "Published": "Опубликовано",
     "Edit lesson": "Опубликовано",
     "First Name, Last Name": "Имя, Фамилия",
+    "File": "Видео файл",
     "Activate": "Отурыть доступ",
     "Yes": "Да",
     "No": "Нет"

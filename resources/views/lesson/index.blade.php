@@ -3,18 +3,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1>
-                    {{__ ('Lesson')}}
-                </h1>
-                <form action="{{ route('lesson.create') }}">
-                    <button class="btn btn-success">+</button>
-                </form>
-                <br>
+                <div class="mt-1 mb-4">
+                    <div class="d-inline-flex"><h1>{{ __('Lesson') }}</h1></div>
+                    <div class="d-inline-flex">
+                        <form action="{{ route('lesson.create') }}">
+                            <button class="btn btn-outline-success"><i class="far fa-file"></i></button>
+                        </form>
+                    </div>
+                </div>
                 <div class="title m-b-md">
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"><i class="far fa-clipboard"></th>
                             <th scope="col">{{__ ('Title')}}</th>
                             <th scope="col">{{__ ('Description')}}</th>
                             <th scope="col">{{__ ('Notes')}}</th>
@@ -35,14 +36,14 @@
                                 <td>{{ $lesson->file }}</td>
                                 <td>{{ $lesson->published ? __('Yes') : __('No') }}</td>
                                 <td>
-                                    <a class="btn btn-success float-right" style="margin: 0 8px;"
-                                       href="{{ route('lesson.edit', $lesson->id) }}">{{__ ('Edit')}}</a>
                                     <form class="float-right" action="{{ route('lesson.destroy', $lesson->id) }}"
                                           method="post" onsubmit="return confirm('Do you really want to delete?');">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger" type="submit">{{__ ('Delete')}}</button>
+                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
+                                    <a class="btn btn-outline-success float-right" style="margin: 0 8px;"
+                                       href="{{ route('lesson.edit', $lesson->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                 </td>
                             </tr>
                         @endforeach

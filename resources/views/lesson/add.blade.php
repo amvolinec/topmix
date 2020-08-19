@@ -14,7 +14,7 @@
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col"><i class="far fa-clipboard"></th>
                                 <th scope="col">{{__ ('Active')}}</th>
                                 <th scope="col">{{__ ('Lesson')}}</th>
                                 <th scope="col">{{__ ('Course')}}</th>
@@ -38,7 +38,7 @@
                         </table>
 
                     </div>
-                    <button class="btn btn-success" type="submit">{{ __('Save changes') }}</button>
+                    <button class="btn btn-outline-success" type="submit">{{ __('Save changes') }}</button>
                 </form>
             </div>
         </div>

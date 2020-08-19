@@ -10,14 +10,15 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Neucha&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #222;
+                background-color: #538d8f;
                 color: #fafafa;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Poiret One', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -48,12 +49,12 @@
             }
 
             .title {
-                font-family: 'Neucha', cursive;
+                font-family: 'Poiret One', cursive;
                 font-size: 84px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fcfcfc;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -87,7 +88,7 @@
                 <div class="title m-b-md tran-all">
                     TOPLESSON
                 </div>
-                <h2>{{ __('messages.learning_platform') }}</h2>
+                <h2 style="color:#ace7ee;">{{ __('messages.learning_platform') }}</h2>
             </div>
         </div>
     </body>

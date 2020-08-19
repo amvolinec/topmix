@@ -11,7 +11,7 @@
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"><i class="far fa-clipboard"></th>
                             <th scope="col">{{__ ('Name')}}</th>
                             <th scope="col">{{__ ('Email')}}</th>
                             <th scope="col">{{__ ('Lessons')}}</th>
@@ -35,8 +35,8 @@
                                     @endforelse
                                 </td>
                                 <td>
-                                    <a class="btn btn-success float-right" style="margin: 0 8px;"
-                                       href="{{ route('users.lessons.edit', $user->id) }}">{{__ ('Edit')}}</a>
+                                    <a class="btn btn-outline-success float-right" style="margin: 0 8px;"
+                                       href="{{ route('users.lessons.edit', $user->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                 </td>
                             </tr>
                         @endforeach

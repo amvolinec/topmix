@@ -14,40 +14,44 @@
                             </div>
                         @endif
 
-                        @if(isset($course))
-                            <form action="{{ route('course.update', $course->id) }}" method="post">
-                                @method('put')
-                        @else
-                            <form action="{{ route('course.store') }}" method="post">
-                                @method('post')
-                        @endif
+                        <form
+                            action="{{ isset($course) ? route('course.update', $course->id) : route('course.store') }}"
+                            method="post">
+                            @method(isset($course) ? 'put' : 'post')
 
                             @csrf
                             <div class="form-group">
                                 <label>{{ __('Course name') }}</label>
-                                <input class="form-control" type="text" name="name" value="{{ $course->name ?? old('name') }}">
+                                <input class="form-control" type="text" name="name"
+                                       value="{{ $course->name ?? old('name') }}">
                             </div>
 
                             <div class="form-group">
                                 <label>{{ __('Description') }}</label>
-                                <input class="form-control" type="text" name="description" value="{{ $course->description ?? old('name') }}">
+                                <input class="form-control" type="text" name="description"
+                                       value="{{ $course->description ?? old('name') }}">
                             </div>
 
                             <div class="form-group">
-                                <select class="form-control" name="author_id" id="author_id">
+                                <label for="author_id">{{ __('Author') }}</label>
+                                <select class="form-control select2" name="author_id" id="author_id">
                                     <option value="" disabled selected>{{ __('Select form list') }}</option>
                                     @foreach($users as $user)
-                                        <option value="{{ $user->id }}" @if(isset($course) && $course->author_id == $user->id) selected @endif>{{ $user->name }}</option>
+                                        <option value="{{ $user->id }}"
+                                                @if(isset($course) && $course->author_id == $user->id) selected @endif>{{ $user->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
+                            <div class="form-group mb-3">
                                 @if(isset($course))
-                                    <button class="btn btn-success" type="submit">{{ __('Update') }}</button>
+                                    <button class="btn btn-outline-success" type="submit"><i
+                                            class="far fa-save"></i> {{ __('Update') }}</button>
                                 @else
-                                    <button class="btn btn-success" type="submit">{{ __('Save') }}</button>
+                                    <button class="btn btn-outline-success" type="submit"><i
+                                            class="far fa-save"></i> {{ __('Save') }}</button>
                                 @endif
-
+                            </div>
 
                         </form>
                     </div>
@@ -55,4 +59,13 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer-scripts')
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#author_id').select2();
+        });
+    </script>
 @endsection

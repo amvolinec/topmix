@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Neucha', cursive;
+    font-family: 'Poiret One', sans-serif;
+    color: #538d8f;
 }
 
 body {
@@ -11,16 +12,19 @@ body {
 }
 
 .navbar {
-    background: #222222 !important;
+    background: #538d8f !important;
     color: #fafafa !important;
+    font-family: 'Poiret One', sans-serif;
+
 }
 
 .navbar a {
     color: #fafafa !important;
+    font-size: 2rem;
 }
 
 .navbar-nav .dropdown-menu {
-    background: #222222 !important;
+    background: #538d8f !important;
 
 }
 
@@ -33,14 +37,16 @@ body {
 }
 
 .dashboard {
+    font-family: 'Poiret One', sans-serif;
     font-style: italic;
     position: absolute;
-    top: 80px;
+    top: 76px;
     left: 0;
     height: calc(100%);
     width: 300px;
     padding: 16px;
-    background: #fff;
+    background: #538d8f;
+    color: #ffffff;
     -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
     -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
     box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.11);
@@ -52,7 +58,8 @@ body {
 }
 
 .dashboard .menu {
-    text-align: center;
+    padding-left: 40px;
+    padding-top: 10px;
 }
 
 .dashboard .menu-item {
@@ -75,7 +82,7 @@ body {
 .dashboard .menu a {
     text-underline: none;
     text-decoration: none;
-    color: #3d3f45;
+    color: #ffffff;
 }
 
 .course {
@@ -86,14 +93,60 @@ body {
     color: #63a147;
 }
 
-.btn-danger {
+.btn {
+    font-size: 1rem;
+}
+
+.btn-outline-danger {
     background: #737373;
     border-color: #737373;
 }
 
-.btn-success {
-    background: #949494;
-    border-color: #949494;
+.btn-outline-success {
+    color: #4f7d80;
+    border-color: #4f7d80;
+}
+
+.btn-outline-success:hover {
+    background: #72b6b9;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #72b6b9;
+    border-color: #4f7d80;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1.25rem;
+}
+
+.card-header {
+    font-family: 'Poiret One', sans-serif;
+    font-size: 2rem;
+}
+
+.card-header:before {
+    font-family: "Font Awesome 5 Free", serif; content: "\f47f";
+    color: #d2d2d2;
+    padding-right: 12px;
+}
+
+.select2-selection__rendered {
+    line-height: 32px !important;
+}
+.select2-container .select2-selection--single {
+    height: 36px !important;
+}
+.select2-selection__arrow {
+    height: 35px !important;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ced4da !important;
+    border-radius: 4px;
+}
+
+label {
+    color: #4f7d80;
 }
 
 @media only screen and (max-width: 600px) {

@@ -2,13 +2,19 @@
     <div class="dashboard">
         <div class="menu">
             <a href="{{ route('course.index') }}">
-                <div class="menu-item tran-all">{{ __('Courses') }}</div>
+                <div class="menu-item tran-all"><i class="fas fa-graduation-cap"></i>
+                    <span>{{ __('Courses') }}</span>
+                </div>
             </a>
             <a href="{{ route('lesson.index') }}">
-                <div class="menu-item tran-all">{{ __('Lessons') }}</div>
+                <div class="menu-item tran-all"><i class="fab fa-leanpub"></i>
+                    <span>{{ __('Lessons') }}</span>
+                </div>
             </a>
             <a href="{{ route('users.lessons') }}">
-                <div class="menu-item tran-all">{{ __('Activate') }}</div>
+                <div class="menu-item tran-all"><i class="fas fa-user-plus"></i>
+                    <span>{{ __('Activate') }}</span>
+                </div>
             </a>
         </div>
     </div>
@@ -16,13 +22,13 @@
     <div class="dashboard">
         <div class="menu">
             <a href="{{ route('course.index') }}">
-                <div class="menu-item tran-all">{{ __('Courses') }}</div>
+                <div class="menu-item tran-all"><i class="fas fa-graduation-cap"></i> {{ __('Courses') }}</div>
             </a>
             <a href="{{ route('lesson.index') }}">
-                <div class="menu-item tran-all">{{ __('Lessons') }}</div>
+                <div class="menu-item tran-all"><i class="fab fa-leanpub"></i> {{ __('Lessons') }}</div>
             </a>
             <a href="{{ route('users.lessons') }}">
-                <div class="menu-item tran-all">{{ __('Activate') }}</div>
+                <div class="menu-item tran-all"><i class="fas fa-user-plus"></i> {{ __('Activate') }}</div>
             </a>
         </div>
     </div>
@@ -30,7 +36,7 @@
     <div class="dashboard">
         <div class="menu">
             <a href="{{ route('users.lessons') }}">
-                <div class="menu-item tran-all">{{ __('Lessons') }}</div>
+                <div class="menu-item tran-all"><i class="fab fa-leanpub"></i>{{ __('Lessons') }}</div>
             </a>
         </div>
     </div>

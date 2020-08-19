@@ -11,18 +11,16 @@
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">{{__ ('Name')}}</th>
                             <th scope="col">{{__ ('Email')}}</th>
-                            <th scope="col">{{__ ('Lessons')}}</th>
+                            <th scope="col">{{__ ('Opened lessons')}}</th>
                             <th scope="col">{{__ ('Action')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($users AS $user)
                             <tr>
-                                <th scope="row">{{ $user->id  }}</th>
-                                <td>{{ $user->name }}</td>
+                                <th scope="row">{{ $user->name }}</th>
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     @forelse($user->lessons AS $lesson)
@@ -35,8 +33,8 @@
                                     @endforelse
                                 </td>
                                 <td>
-                                    <a class="btn btn-success float-right" style="margin: 0 8px;"
-                                       href="{{ route('users.lessons.edit', $user->id) }}">{{__ ('Edit')}}</a>
+                                    <a class="btn btn-outline-success float-right" style="margin: 0 8px;"
+                                       href="{{ route('users.lessons.edit', $user->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                 </td>
                             </tr>
                         @endforeach

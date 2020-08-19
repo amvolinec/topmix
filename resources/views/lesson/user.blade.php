@@ -11,7 +11,7 @@
                     <table class="table">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"><i class="far fa-clipboard"></th>
                             <th scope="col">{{__ ('Title')}}</th>
                             <th scope="col">{{__ ('Course')}}</th>
                             <th scope="col">{{__ ('Actions')}}</th>
@@ -23,7 +23,7 @@
                                 <th scope="row">{{ $lesson->id  }}</th>
                                 <td>{{ $lesson->title }}</td>
                                 <td>{{ $lesson->course->name }}</td>
-                                <th><a class="btn btn-success" href="{{ route('users.lessons.view', $lesson->id) }}">{{ __('Open') }}</a></th>
+                                <th><a class="btn btn-outline-success" href="{{ route('users.lessons.view', $lesson->id) }}">{{ __('Open') }}</a></th>
                             </tr>
                         @endforeach
                         </tbody>
