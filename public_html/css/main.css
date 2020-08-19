@@ -86,11 +86,13 @@ body {
 }
 
 .course {
-    color: #dcb753;
+    color: #999999;
+    width: calc(50% - 4px);
 }
 
 .lesson {
-    color: #63a147;
+    color: #538d8f;
+    width: calc(50% - 4px);
 }
 
 .btn {

@@ -27,8 +27,8 @@
                                 <td>
                                     @forelse($user->lessons AS $lesson)
                                         <div>
-                                            <span class="lesson">{{ $lesson->title }}</span>
-                                            <span class="course">{{ $lesson->course->name }}</span>
+                                            <div class="lesson d-inline-flex">{{ $lesson->title }}</div>
+                                            <div class="course d-inline-flex">{{ $lesson->course->name }}</div>
                                         </div>
                                     @empty
                                         {{ __('No lessons') }}
