@@ -65,9 +65,9 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
-        'upload' => [
+        'uploads' => [
             'driver' => 'local',
-            'root' => public_path('video'),
+            'root' => public_path(),
         ],
 
     ],

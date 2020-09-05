@@ -26,9 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = User::with('role')->where('id', Auth::user()->id)->first();
-        if ($user->role->id == 1) {
+
+        if (isset($user->role) && $user->role->id == 1) {
             return view('home-admin');
-        } elseif ($user->role->id == 2) {
+        } elseif (isset($user->role) && $user->role->id == 2) {
             return view('home-lecture');
         }
         return view('home-user');

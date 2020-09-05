@@ -14,7 +14,7 @@
 
                         <form
                             action="{{ isset($lesson) ? route('lesson.update', $lesson->id) : route('lesson.store') }}"
-                            method="post">
+                            method="post" enctype="multipart/form-data">
 
                             @method(isset($lesson) ? 'put' : 'post')
                             @csrf

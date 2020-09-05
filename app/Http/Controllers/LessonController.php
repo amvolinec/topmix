@@ -6,6 +6,7 @@ use App\Course;
 use App\Lesson;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LessonController extends Controller
 {
@@ -39,8 +40,17 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('file')) {
+            $path = Storage::disk('uploads')->putFile('videos', $request->file('file'));
+        }
+
         $lesson = Lesson::create($request->except('_method', '_token', 'published'));
         $lesson->published = $request->has('published') ? 1 : 0;
+
+        if (!empty($path)) {
+            $lesson->file = $path;
+        }
+
         $lesson->save();
 
         return redirect()->route('lesson.index');
@@ -61,7 +71,7 @@ class LessonController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Lesson  $lesson
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function edit(Lesson $lesson)
     {
@@ -77,13 +87,19 @@ class LessonController extends Controller
      */
     public function update(Request $request, Lesson $lesson)
     {
-        if($request->hasFile('file')){
-            $path = $request->file('file')->store('files');
+
+        if ($request->hasFile('file')) {
+            $path = Storage::disk('uploads')->putFile('videos', $request->file('file'));
         }
 
-        $lesson->fill($request->except('_method', '_token', 'published'))->save();
+        $lesson->fill($request->except('_method', '_token', 'published', 'file'))->save();
+
+        if (!empty($path)) {
+            $lesson->file = $path;
+        }
 
         $lesson->published = $request->has('published') ? 1 : 0;
+
         $lesson->save();
         return redirect()->route('lesson.index');
 
