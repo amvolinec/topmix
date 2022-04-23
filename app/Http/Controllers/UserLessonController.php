@@ -28,9 +28,6 @@ class UserLessonController extends Controller
 
         } elseif ($this->user_role == 2) {
 
-//            $lessons = Lesson::with('course')->where('author_id', $this->user_id)->get();
-//            $user_id = $this->user_id;
-
             return view('lesson.lecture', ['users' => $users]);
 
         } elseif ($this->user_role == 3) {
@@ -90,7 +87,7 @@ class UserLessonController extends Controller
     public function view($lesson_id)
     {
         $this->getUserId();
-        if($this->userCanView($lesson_id)){
+        if ($this->userCanView($lesson_id)) {
             return view('lesson.view', ['lesson' => Lesson::findOrFail($lesson_id)]);
         }
         return redirect()->route('home');
@@ -113,17 +110,18 @@ class UserLessonController extends Controller
         if ($this->user_role == 1) {
             $can = true;
         }
-        if ($this->user_role == 2 && $lesson->author_id == $this->user_id){
+        if ($this->user_role == 2 && $lesson->author_id == $this->user_id) {
             $can = true;
         }
-        if ($this->user_role == 3 && $lesson->users->contains('id', $this->user_id)){
+        if ($this->user_role == 3 && $lesson->users->contains('id', $this->user_id)) {
             $can = true;
         }
         return $can;
     }
 
-    protected function getUsers(){
-        $users = User::with(['lessons', 'role'])->whereHas('role', function($query) {
+    protected function getUsers()
+    {
+        $users = User::with(['lessons', 'role'])->whereHas('role', function ($query) {
             return $query->where('id', 3);
         })->get();
         return $users;

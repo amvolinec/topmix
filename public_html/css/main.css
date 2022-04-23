@@ -151,9 +151,21 @@ label {
     color: #4f7d80;
 }
 
+.color-red {
+    color: #9e2424;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
 @media only screen and (max-width: 600px) {
+    .title {
+        font-size: 2rem !important;
+    }
+
     .dashboard {
-        display: block;
+        display: none;
         position: relative;
         width: 100%;
         height: auto;
@@ -162,5 +174,27 @@ label {
     .wrapper {
         position: relative;
         margin-left: 0;
+    }
+
+    .navbar a {
+        color: #fafafa !important;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    .table th, .table td {
+        font-size: .75rem;
+    }
+
+    .table .thead-dark th {
+        font-size: .85rem;
     }
 }

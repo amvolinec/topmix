@@ -32,7 +32,7 @@
             </a>
         </div>
     </div>
-@elseif($role == 3)
+@else
     <div class="dashboard">
         <div class="menu">
             <a href="{{ route('users.lessons') }}">
@@ -40,6 +40,4 @@
             </a>
         </div>
     </div>
-@else
-
 @endif

@@ -20,8 +20,10 @@ class CreateLessonsTable extends Migration
             $table->text('text')->nullable();
             $table->string('file')->nullable();
             $table->string('notes')->nullable();
+            $table->string('code')->nullable();
             $table->unsignedBigInteger('course_id')->nullable();
             $table->boolean('published')->default(0);
+            $table->decimal('price', 8,2)->default(0);
             $table->timestamps();
 
             $table->foreign('course_id')->references('id')

@@ -32,6 +32,7 @@ class HomeController extends Controller
         } elseif (isset($user->role) && $user->role->id == 2) {
             return view('home-lecture');
         }
-        return view('home-user');
+        return redirect()->route('users.lessons');
+//        return view('home-user');
     }
 }

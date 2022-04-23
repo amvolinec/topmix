@@ -12,7 +12,7 @@
     "Dashboard": "Кабинет",
     "Learning system": "Образовательная программа",
     "Confirm Password": "Подтвердите пароль",
-    "Actions": "Операции",
+    "Actions": "Действия",
     "Version": "Версия",
     "Description": "Описание",
     "Settings": "Настройки",
@@ -47,5 +47,12 @@
     "File": "Видео файл",
     "Activate": "Отурыть доступ",
     "Yes": "Да",
-    "No": "Нет"
+    "No": "Нет",
+    "Open": "Открыть",
+    "No lessons": "Нет открытых уроков",
+    "Select": "Выбрать",
+    "Code": "Код урока",
+    "Price": "Цена",
+    "You don't have any lessons open yet": "На данный момент у вас нет открытых уроков"
+
 }

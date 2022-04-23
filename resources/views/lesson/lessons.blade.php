@@ -8,7 +8,7 @@
                 </h1>
                 <br>
                 <div class="title m-b-md">
-                    <table class="table">
+                    <table class="table table-responsive-sm">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col"><i class="far fa-clipboard"></th>
@@ -19,7 +19,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users AS $user)
+                        @forelse($users AS $user)
                             <tr>
                                 <th scope="row">{{ $user->id  }}</th>
                                 <td>{{ $user->name }}</td>
@@ -39,7 +39,9 @@
                                        href="{{ route('users.lessons.edit', $user->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            {{ __('No users') }}
+                        @endforelse
                         </tbody>
                     </table>
                 </div>

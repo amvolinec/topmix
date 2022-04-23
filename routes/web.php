@@ -19,10 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('clear', function () {
-    $exitCode[0] = Artisan::call('cache:clear');
-    $exitCode[1] = Artisan::call('view:clear');
-    $exitCode[2] = Artisan::call('config:clear');
-    $exitCode[3] = Artisan::call('clear-compiled');
+    $exitCode[0] = Artisan::call('optimize:clear');
     dd($exitCode);
 });
 
