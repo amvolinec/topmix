@@ -27,7 +27,7 @@
     <script>
         $(document).ready(function () {
 
-            var options, player;
+            let options, player;
 
             options = {
                 controls: true,
