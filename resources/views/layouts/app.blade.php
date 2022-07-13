@@ -14,6 +14,7 @@
     <script src="{{ asset('js/main.js') }}" defer></script>
     <script src="{{ asset('js/select2.full.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -23,6 +24,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.css') }}" rel="stylesheet">
+
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
+
+
 </head>
 <body>
 <div id="app">
@@ -59,7 +65,8 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fas fa-user-circle"></i> <span>{{ Auth::user()->name }}</span><span class="caret"></span>
+                                <i class="fas fa-user-circle"></i> <span>{{ Auth::user()->name }}</span><span
+                                    class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -83,7 +90,7 @@
 
     <main class="py-4">
         <div class="container-fluid">
-                @include('layouts.dashboard')
+            @include('layouts.dashboard')
             <div class="wrapper">
                 @yield('content')
             </div>
@@ -91,5 +98,11 @@
     </main>
 </div>
 @yield('footer-scripts')
+
+<script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+
+<script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+
+
 </body>
 </html>
