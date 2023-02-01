@@ -84,7 +84,7 @@
                                 <th scope="row">{{ $lesson->id  }}</th>
                                 <td>{{ $lesson->title }}</td>
                                 <td>{{ $lesson->course->name }}</td>
-                                <th><a class="btn btn-outline-success" href="{{ route('users.lessons.view', $lesson->id) }}">{{ __('Open') }}</a></th>
+                                <th><a class="btn btn-outline-success btn-ico-sm" href="{{ route('users.lessons.view', $lesson->id) }}">{{ __('Open') }}</a></th>
                             </tr>
                         @empty
                             <h2>

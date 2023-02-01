@@ -197,4 +197,19 @@ label {
     .table .thead-dark th {
         font-size: .85rem;
     }
+
+    .btn-ico-sm {
+        width: 80px;
+        font-size: 10px;
+    }
+
+    .col-md-12 {
+        padding: 0;
+    }
+
+    .video-dimensions {
+        width: 100vw !important;
+        /* height: auto !important; */
+        padding: 0 !important;
+    }
 }

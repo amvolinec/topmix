@@ -25,7 +25,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/select2.css') }}" rel="stylesheet">
 
-    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+    <link href="https://unpkg.com/video.js@7.5.4/dist/video-js.css" rel="stylesheet">
     <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
 
 
@@ -98,11 +98,5 @@
     </main>
 </div>
 @yield('footer-scripts')
-
-<script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
-
-<script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
-
-
 </body>
 </html>
