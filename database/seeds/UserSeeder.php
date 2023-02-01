@@ -17,19 +17,19 @@ class UserSeeder extends Seeder
             [
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
-                'password' => Hash::make('admin2020'),
+                'password' => Hash::make('password'),
                 'role_id' => 1
             ],
             [
                 'name' => 'Tatjana Opolais',
                 'email' => 'tatjanaopola@inbox.lv',
-                'password' => Hash::make('saulkrasti2020'),
+                'password' => Hash::make('password'),
                 'role_id' => 2
             ],
             [
                 'name' => 'Student One',
                 'email' => 'student@inbox.lv',
-                'password' => Hash::make('student2020'),
+                'password' => Hash::make('password'),
                 'role_id' => 3
             ],
         ];
