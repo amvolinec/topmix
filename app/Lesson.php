@@ -42,7 +42,8 @@ class Lesson extends Model
     }
 
     private function getVideoPath($path, $size = '720') {
-        $file = basename($path, ".mp4");
-        return '/videos/' . $file . '-' . $size . '.mp4';
+
+        $path_parts = pathinfo($path);
+        return  $path_parts['dirname']. '/' . $path_parts['filename'] . '-' . $size . '.' . $path_parts['extension'];
     }
 }

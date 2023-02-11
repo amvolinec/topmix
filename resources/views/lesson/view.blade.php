@@ -8,14 +8,11 @@
             <br>
             @if(!empty($lesson['file']))
 
-                <video id="video" class="video-js vjs-default-skin" preload="auto" controls data-setup='{}'>
-                    <source label="1080p" src="{{ asset($lesson['file']) }}" type="video/mp4" res="1080">
-                    <source label="720p" src="{{ asset($lesson['file720']) }}" type="video/mp4" res="720">
-                    <source label="480p" src="{{ asset($lesson['file480']) }}" type="video/mp4" res="480">
-                    <source label="360p" src="{{ asset($lesson['file360']) }}" type="video/mp4" res="360">
-                </video>
+                <video id="video" style="max-width: 100%;" controls></video>
 
             @endif
+
+            <div id="file" style="display: none;"></div>
         </div>
     </div>
 
@@ -23,31 +20,60 @@
 @endsection
 
 @section('footer-scripts')
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/video.js@7.5.4/dist/video.js"></script>
-    <script
-        src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
     <script>
-        $(document).ready(function () {
+        let sources = <?php echo json_encode($lesson) ;?>
 
-            let options, player;
+        var userImageLink =
+            "https://toplesson.eu/img/CIP_Launch-banner.png";
+        var time_start, end_time;
 
-            options = {
-                controls: true,
-                muted: false,
-                width: 640,
-                controlBar: {
-                    children: [
-                        'playToggle',
-                        'progressControl',
-                        'volumePanel',
-                        'qualitySelector',
-                        'fullscreenToggle',
-                    ],
-                },
-            };
+        // The size in bytes
+        var downloadSize = 83132;
+        var downloadImgSrc = new Image();
 
-            videojs('video', options);
-        });
+        downloadImgSrc.onload = function () {
+            end_time = new Date().getTime();
+            displaySpeed();
+        };
+
+        time_start = new Date().getTime();
+        downloadImgSrc.src = userImageLink;
+        console.log("time start: " + time_start);
+
+        function displaySpeed() {
+            var timeDuration = (end_time - time_start) / 1000;
+            var loadedBits = downloadSize * 8;
+
+            /* Converts a number into string
+               using toFixed(2) rounding to 2 */
+            var bps = (loadedBits / timeDuration);
+            var speedInKbps = (bps / 1024);
+            // var speedInMbps = (speedInKbps / 1024).toFixed(2);
+            console.log("Your internet connection speed is: \n"
+                + speedInKbps
+                + " kbps\n");
+
+            var url = sources.file;
+
+            if (speedInKbps < 15000) {
+                url = sources.file360;
+            } else if (speedInKbps < 30000) {
+                url = sources.file480;
+            } else if (speedInKbps < 45000) {
+                url = sources.file720;
+            }
+
+            document.getElementById("file").innerHTML = "Your internet connection speed is: \n"
+                + speedInKbps.toFixed(2)
+                + " kbps\n" + url;
+
+            console.log(url);
+            changeSource(url);
+        }
+
+        const changeSource = (url) => {
+            const video = document.getElementById("video");
+            video.src = "https://toplesson.eu/" + url;
+        };
     </script>
 @endsection
