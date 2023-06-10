@@ -40,9 +40,9 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('file')) {
-            $path = Storage::disk('uploads')->putFile('videos', $request->file('file'));
-        }
+//        if ($request->hasFile('file')) {
+//            $path = Storage::disk('uploads')->putFile('videos', $request->file('file'));
+//        }
 
         $lesson = Lesson::create($request->except('_method', '_token', 'published'));
         $lesson->published = $request->has('published') ? 1 : 0;
@@ -88,15 +88,15 @@ class LessonController extends Controller
     public function update(Request $request, Lesson $lesson)
     {
 
-        if ($request->hasFile('file')) {
-            $path = Storage::disk('uploads')->putFile('videos', $request->file('file'));
-        }
+//        if ($request->hasFile('file')) {
+//            $path = Storage::disk('uploads')->putFile('videos', $request->file('file'));
+//        }
 
-        $lesson->fill($request->except('_method', '_token', 'published', 'file'))->save();
+        $lesson->fill($request->except('_method', '_token', 'published'))->save();
 
-        if (!empty($path)) {
-            $lesson->file = $path;
-        }
+//        if (!empty($path)) {
+//            $lesson->file = $path;
+//        }
 
         $lesson->published = $request->has('published') ? 1 : 0;
 

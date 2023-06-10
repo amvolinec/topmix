@@ -66,14 +66,16 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
         p {
             font-size: 1.125rem;
         }
+
         .content {
             max-width: 960px;
         }
-        video::-webkit-media-controls-fullscreen-button
-        {
+
+        video::-webkit-media-controls-fullscreen-button {
             display: none !important;
         }
     </style>
@@ -112,7 +114,8 @@
             композиторов творивших в ту или иную эпоху.
         </p>
 
-        <video style="max-width: 480px;" src="/videos/shorts/barrocco/barrocco-short-480p.mp4" controls></video>
+        <iframe src="https://drive.google.com/file/d/1GHsjF_kZaaaEpamQFhEPAbc9sKPkLXw4/preview" width="640" height="360"
+                allow="autoplay"></iframe>
         <br>
         <a href="{{ route('register') }}">{{ __('messages.register') }}</a>
     </div>

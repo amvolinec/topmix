@@ -42,9 +42,9 @@
                                 </select>
                             </div>
 
-                            <div class="form-group m-5">
-                                <label for="exampleFormControlFile1">{{ __('Select file') }}</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file">
+                            <div class="form-group">
+                                <label for="file">{{ __('Enter file url') }}</label>
+                                <input type="text" class="form-control" id="file" name="file">
                             </div>
 
                             <div class="form-check">

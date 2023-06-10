@@ -53,6 +53,7 @@
     "Select": "Выбрать",
     "Code": "Код урока",
     "Price": "Цена",
-    "You don't have any lessons open yet": "На данный момент у вас нет открытых уроков"
+    "You don't have any lessons open yet": "На данный момент у вас нет открытых уроков",
+    "Enter file url": "Введите ссыку на видео"
 
 }

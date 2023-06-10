@@ -89,10 +89,9 @@ class UserLessonController extends Controller
         $this->getUserId();
 
         $lesson =  Lesson::findOrFail($lesson_id);
-        $videos = json_encode($lesson->videos());
 
         if ($this->userCanView($lesson_id)) {
-            return view('lesson.view', ['lesson' => $lesson->format(), 'videos' => $videos]);
+            return view('lesson.view', ['lesson' => $lesson->format()]);
         }
         return redirect()->route('home');
     }
